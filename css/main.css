@@ -1,7 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+body,
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: auto, 50px;
+  /*We have row 1-logo and nav , 2 the text and the remaining things*/
+  grid-auto-columns: 12% /*Side bar */, auto; /*rest of the layout*/
+  grid-template-areas:
+    "sidebar right"
+    "footer footer";
 }
 a {
   text-decoration: none;
@@ -32,8 +44,61 @@ ul li a {
 header {
   background-color: #41c7c7;
   display: grid;
-  grid-template-columns: fit-content(20%) 80%; /*logo -20 , nav -80, 
+  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end]; /*logo -20 , nav -80, 
+  by default, these are given names 1, 2 - we can use these for re-ordering like in flex-order
+  we can give them our own names (will be useful in grid-column-start/-end props
   We can also use fit-content() around any of our values to force it to fit content to the value given*/
   /*If we wanted to equal columns, we can use repeat(arg1, arg2) -arg1 is no. of times, arg 2- real width value in this case*/
   /*grid-template-columns: repeat(2, auto)*/
+}
+
+section.hero {
+  background-color: #36adad;
+  padding: 2em;
+  border-top: 5px solid #2ea0a0;
+
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    auto
+  ); /*2 columns (1 -content,2 -image) with equal width*/
+}
+
+.content h1 {
+  text-transform: uppercase;
+  color: #fffbc5;
+}
+
+.content p {
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+#mountain {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #1c9090;
+  color: #fff;
+  padding: 1em;
+}
+
+.main {
+  grid-area: right;
+  grid-template-rows: 51px fit-content(30%);
+  display: grid;
+}
+
+footer {
+  grid-area: footer;
+  background: lightgray;
 }
