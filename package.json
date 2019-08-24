@@ -1,0 +1,12 @@
+{
+  "name": "try-css-grid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Maxondria/try-css-grid.git",
+  "author": "Maxon Tayebwa <maxtayebwa@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2"
+  }
+}
