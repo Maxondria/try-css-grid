@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+#logo {
+  padding: 15px;
+  margin-left: 15px;
+  background-color: #f3f1c7;
+  color: #298383;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+}
+ul {
+  list-style-type: none;
+  float: right;
+}
+
+ul li {
+  display: inline;
+}
+ul li a {
+  color: #ffffff;
+  padding: 15px;
+}
+
+header {
+  background-color: #41c7c7;
+  display: grid;
+  grid-template-columns: fit-content(20%) 80%; /*logo -20 , nav -80, 
+  We can also use fit-content() around any of our values to force it to fit content to the value given*/
+  /*If we wanted to equal columns, we can use repeat(arg1, arg2) -arg1 is no. of times, arg 2- real width value in this case*/
+  /*grid-template-columns: repeat(2, auto)*/
+}
